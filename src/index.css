@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1, h2, .display {
+  font-family: 'Fraunces', serif;
+}
+
+/* Masonry-style grid */
+.game-grid {
+  column-gap: 1.25rem;
+  columns: 1;
+}
+
+@media (min-width: 640px) {
+  .game-grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .game-grid {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .game-grid {
+    columns: 4;
+  }
+}
+
+.game-card-wrap {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: 3px solid #f0a202;
+  outline-offset: 2px;
+}
+
+/* Segment button active state */
+.seg-btn[aria-pressed="true"] {
+  background: #1f3a2e !important;
+  color: #ffffff !important;
+}
+
+/* Spin animation */
+.spin {
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
